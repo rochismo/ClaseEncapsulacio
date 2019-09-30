@@ -1,0 +1,2 @@
+# ClaseEncapsulacio
+Clase ejercicio
