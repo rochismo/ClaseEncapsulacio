@@ -1,5 +1,5 @@
 public interface Enqueuer {
-    public void add(Persona persona);
-    public void remove(Persona persona);
+    public void add(String persona);
+    public void remove();
     public int getLength();
 }

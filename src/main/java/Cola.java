@@ -1,18 +1,17 @@
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Cola {
-   private Queue<Persona> cola = new LinkedList<Persona>();
-   public void add(Persona persona){
+public class Cola implements Enqueuer{
+   private Queue<String> cola = new LinkedList<String>();
+   public void add(String persona){
        cola.add(persona);
    }
-   public void remove(Persona persona){
-       cola.remove(persona);
+
+   public void remove(){
+       cola.poll();
    }
 
-   public int countPersonas(){
-       return  cola.size();
-   }
+    public int getLength() {
+        return cola.size();
+    }
 }

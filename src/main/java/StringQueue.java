@@ -2,30 +2,29 @@ public class StringQueue implements Enqueuer {
 
     private String queue = "";
 
-    public void add(Persona person) {
-        int length = getLength();
-        if (length == 0) {
-            queue += person.getNombre();
+    public void add(String name) {
+        if (queue.equals("")) {
+            queue += name;
         } else {
-            queue += "/" + person.getNombre();
+            queue += "/" + name;
         }
     }
 
-    public void remove(Persona person) {
-        if (getLength() == 0) {
+    public void remove() {
+        if (queue.equals("")) {
             return;
         }
         String[] currentQueue = queue.split("/");
         queue = "";
         for (String element : currentQueue) {
-            if (element.equals(person.getNombre())) {
+            if (element.equals(currentQueue[0])) {
                 continue;
             }
-            this.add(person);
+            this.add(element);
         }
     }
 
     public int getLength() {
-        return queue.split("/").length;
+        return queue.equals("") ? 0 : queue.split("/").length;
     }
 }
